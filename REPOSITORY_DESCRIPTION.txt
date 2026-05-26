@@ -1,0 +1,1 @@
+LiteRaceSegNet Personal Research Edition: v15.2 research-extension portfolio for lightweight road-damage segmentation, HPLS-Eval, Precision Mini-Lab, and FP32 / FP16 / INT8 output-stability analysis.

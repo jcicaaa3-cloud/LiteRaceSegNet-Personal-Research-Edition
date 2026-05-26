@@ -1,0 +1,7 @@
+experiment_id,case_set_id,case_id,reference_precision,target_precision,model_format,runtime_backend,execution_provider,hardware_lane,calibration_policy,threshold_policy,resize_policy,reference_mask_path,target_mask_path,overlay_path,metric_json_path,log_path,fallback_status,status,evidence_level,notes
+PML-FP32-CPU-REF-CS01-001,CS01,TBD,FP32,n/a,TBD,TBD,TBD,CPU,n/a,fixed_TBD,TBD,TBD,n/a,TBD,TBD,TBD,TBD,planned,Level 0,TBD
+PML-FP16-GPU-TORCH-CS01-001,CS01,TBD,FP32,FP16,TBD,PyTorch CUDA,TBD,GPU,n/a,fixed_TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,planned,Level 0,TBD
+PML-INT8-CPU-ORT-CS01-001,CS01,TBD,FP32,INT8,ONNX_TBD,ONNX Runtime,TBD,CPU,calibration_TBD,fixed_TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,planned,Level 0,TBD
+PML-INT8-GPU-TRT-CS01-001,CS01,TBD,FP32,INT8,TensorRT_TBD,TensorRT,TBD,GPU,calibration_TBD,fixed_TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,future_protocol,Level 0,TBD
+PML-INT8-NPU-FUTURE-CS01-001,CS01,TBD,FP32,INT8_or_vendor_TBD,vendor_TBD,vendor_runtime_TBD,TBD,possible_NPU,calibration_TBD,fixed_TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,future_protocol,Level 0,TBD
+PML-INT8-TPU-FUTURE-CS01-001,CS01,TBD,FP32,quantized_TBD,TPU_TBD,TPU_runtime_TBD,TBD,possible_TPU,calibration_TBD,fixed_TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,future_protocol,Level 0,TBD

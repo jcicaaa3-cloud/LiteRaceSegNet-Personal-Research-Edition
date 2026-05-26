@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Precision Mini-Lab | LiteRaceSegNet Personal Research Edition</title>
+  <meta name="description" content="Small controlled evaluation materials for precision-mode output-stability checks." />
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../assets/site.css" />
+</head>
+<body>
+<nav class="topnav" aria-label="Primary navigation">
+  <a class="brand" href="../../index.html">LiteRaceSegNet PRE</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle menu">Menu</button>
+  <div class="nav-links">
+    <a href="../../index.html">Overview</a>
+    <a href="../../pages/start-here.html">Start here</a>
+    <a href="../../pages/architecture.html">Architecture</a>
+    <a href="../../pages/evidence.html">Evidence</a>
+    <a href="../../research_extension.html">Research extension</a>
+    <a href="../../pages/output-stability.html">Output Stability</a>
+    <a href="../../pages/hpls-eval.html">HPLS-Eval</a>
+    <a href="../../pages/precision-mini-lab.html">Precision Mini-Lab</a>
+    <a href="../../pages/repository.html">Repository</a>
+    <a href="../../pages/license.html">Scope</a>
+    <a href="../../pages/qa-guide.html">QA</a>
+  </div>
+  <div class="nav-actions">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+  </div>
+</nav>
+
+<main>
+<section class="page-hero">
+  <p class="breadcrumb"><a href="../../index.html">Home</a> / <a href="../index.html">HPLS-Eval</a> / Precision Mini-Lab</p>
+  <p class="eyebrow">PRECISION MINI-LAB</p>
+  <h1>Small-scale evaluation workspace</h1>
+  <p class="lead">The mini-lab keeps experiment planning, result recording, and mask-comparison utilities in one reviewable place. It is meant for compact checks around FP32, FP16, and INT8 output behavior.</p>
+</section>
+
+<section class="cards route-cards mini-lab-cards" aria-label="Precision Mini-Lab materials">
+  <article class="card">
+    <p class="card-index">01</p>
+    <h2>Experiment matrix</h2>
+    <p>Planned rows for CPU, GPU, and other comparison settings.</p>
+    <a href="experiment_matrix.md">Open matrix</a>
+  </article>
+  <article class="card">
+    <p class="card-index">02</p>
+    <h2>Result template</h2>
+    <p>Case-level and aggregate table format for recording output-stability results.</p>
+    <a href="result_template.md">Open template</a>
+  </article>
+  <article class="card">
+    <p class="card-index">03</p>
+    <h2>Metric helper</h2>
+    <p>Small Python helper for comparing reference and target masks.</p>
+    <a href="scripts/compute_output_stability_metrics_v15_2.py">Open script</a>
+  </article>
+</section>
+
+<section class="grid-two mini-lab-sections">
+  <article class="panel">
+    <h2>What this page is for</h2>
+    <p>Use this page as the practical entry point for small controlled precision checks. It gives reviewers a clear path from planned comparison rows to recorded tables and simple mask-level measurements.</p>
+  </article>
+  <article class="panel">
+    <h2>What is included</h2>
+    <ul class="compact-list">
+      <li>Experiment matrix for planned comparison rows.</li>
+      <li>Result template for case-level and aggregate records.</li>
+      <li>Metric helper for reference-versus-target mask comparison.</li>
+      <li>Table and note templates for later result collection.</li>
+    </ul>
+  </article>
+</section>
+
+<section class="grid-two mini-lab-sections">
+  <article class="panel quiet-panel">
+    <h2>Suggested reading order</h2>
+    <ol class="compact-list">
+      <li>Open the experiment matrix.</li>
+      <li>Review the result template.</li>
+      <li>Use the metric helper if mask comparison is needed.</li>
+      <li>Return to HPLS-Eval for the broader evaluation direction.</li>
+    </ol>
+  </article>
+  <article class="panel quiet-panel next-panel">
+    <h2>Next links</h2>
+    <div class="link-row">
+      <a class="btn secondary" href="../index.html">HPLS-Eval home</a>
+      <a class="btn secondary" href="../../pages/output-stability.html">Output Stability</a>
+      <a class="btn secondary" href="../../pages/precision-mini-lab.html">Portal summary</a>
+    </div>
+  </article>
+</section>
+
+<section class="panel quiet-panel mini-lab-note">
+  <h2>Scope note</h2>
+  <p>This page summarizes lightweight review materials and does not replace a full experimental benchmark package.</p>
+</section>
+</main>
+
+<footer class="site-footer">
+  <p><strong>Public package note:</strong> this portal contains documentation, selected source references, protocols, and result templates for review.</p>
+  <p>Raw datasets, credentials, checkpoints, and deployment artifacts remain outside this public release.</p>
+</footer>
+<script>
+(function () {
+  const root = document.documentElement;
+  const themeButtons = document.querySelectorAll('.theme-toggle');
+  const navToggles = document.querySelectorAll('.nav-toggle');
+  const storedTheme = localStorage.getItem('lrs-theme');
+
+  if (storedTheme === 'dark') root.classList.add('dark');
+
+  themeButtons.forEach(btn => btn.addEventListener('click', () => {
+    root.classList.toggle('dark');
+    localStorage.setItem('lrs-theme', root.classList.contains('dark') ? 'dark' : 'light');
+  }));
+
+  navToggles.forEach(btn => btn.addEventListener('click', () => {
+    const nav = btn.closest('.topnav');
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  }));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# LiteRaceSegNet Personal Research Edition
+__pycache__/
+*.py[cod]
+.env
+*.pem
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.pkl
+*.pickle
+.DS_Store
+__MACOSX/
+*_patch/
+*.zip
+seg/runs/
+seg/outputs/

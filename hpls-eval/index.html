@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HPLS-Eval | LiteRaceSegNet Personal Research Edition</title>
+  <meta name="description" content="Hardware, precision, latency, and stability evaluation notes for the LiteRaceSegNet research extension." />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+<nav class="topnav" aria-label="Primary navigation">
+  <a class="brand" href="../index.html">LiteRaceSegNet PRE</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle menu">Menu</button>
+  <div class="nav-links">
+    <a href="../index.html">Overview</a>
+    <a href="../pages/start-here.html">Start here</a>
+    <a href="../pages/architecture.html">Architecture</a>
+    <a href="../pages/evidence.html">Evidence</a>
+    <a href="../research_extension.html">Research extension</a>
+    <a href="../pages/output-stability.html">Output Stability</a>
+    <a href="../pages/hpls-eval.html">HPLS-Eval</a>
+    <a href="../pages/precision-mini-lab.html">Precision Mini-Lab</a>
+    <a href="../pages/repository.html">Repository</a>
+    <a href="../pages/license.html">Scope</a>
+    <a href="../pages/qa-guide.html">QA</a>
+  </div>
+  <div class="nav-actions">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+  </div>
+</nav>
+
+<main>
+<section class="page-hero">
+  <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../research_extension.html">Research extension</a> / HPLS-Eval</p>
+  <p class="eyebrow">HPLS-EVAL</p>
+  <h1>Hardware-aware evaluation notes</h1>
+  <p class="lead">HPLS-Eval frames precision, latency, hardware, and stability as review conditions for segmentation output behavior. It keeps the evaluation plan separate from completed model claims.</p>
+</section>
+
+<section class="cards">
+  <article class="card"><p class="card-index">01</p><h2>Precision</h2><p>Track FP32, FP16, and INT8 conditions with runtime metadata and fallback status.</p></article>
+  <article class="card"><p class="card-index">02</p><h2>Latency</h2><p>Record timing context carefully, including backend and device lane, before comparing rows.</p></article>
+  <article class="card"><p class="card-index">03</p><h2>Stability</h2><p>Compare mask drift, boundary behavior, components, and centroid movement rather than relying on a single score.</p></article>
+</section>
+
+<section class="grid-two">
+  <article class="panel">
+    <h2>How to use this workspace</h2>
+    <ul class="compact-list">
+      <li>Start from a documented FP32 reference path.</li>
+      <li>Add FP16 or INT8 rows only when the runtime path is clear.</li>
+      <li>Keep masks, logs, thresholds, and backend notes together.</li>
+      <li>Report untested hardware as planned, not measured.</li>
+    </ul>
+  </article>
+  <article class="panel">
+    <h2>Next links</h2>
+    <ul class="compact-list">
+      <li><a href="./precision-mini-lab/index.html">Open Precision Mini-Lab</a></li>
+      <li><a href="../pages/output-stability.html">Output stability metrics</a></li>
+      <li><a href="../research_extension.html">Back to research extension</a></li>
+    </ul>
+  </article>
+</section>
+</main>
+
+<footer class="site-footer">
+  <p><strong>Public package note:</strong> this portal contains documentation, selected source references, protocols, and result templates for review.</p>
+  <p>Raw datasets, credentials, checkpoints, and deployment artifacts remain outside this public release.</p>
+</footer>
+<script>
+(function () {
+  const root = document.documentElement;
+  const themeButtons = document.querySelectorAll('.theme-toggle');
+  const navToggles = document.querySelectorAll('.nav-toggle');
+  const storedTheme = localStorage.getItem('lrs-theme');
+
+  if (storedTheme === 'dark') root.classList.add('dark');
+
+  themeButtons.forEach(btn => btn.addEventListener('click', () => {
+    root.classList.toggle('dark');
+    localStorage.setItem('lrs-theme', root.classList.contains('dark') ? 'dark' : 'light');
+  }));
+
+  navToggles.forEach(btn => btn.addEventListener('click', () => {
+    const nav = btn.closest('.topnav');
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  }));
+})();
+</script>
+</body>
+</html>

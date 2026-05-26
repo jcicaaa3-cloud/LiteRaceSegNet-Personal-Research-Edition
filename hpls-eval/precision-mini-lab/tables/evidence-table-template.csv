@@ -1,0 +1,2 @@
+Case ID,Artifact Type,Model Format,Runtime Backend,Execution Provider,Precision Mode,Calibration Note,Fallback Observed,Dice,mIoU,Boundary IoU,Boundary F1,Mask Area Ratio,FP Area,FN Area,Component Count,Centroid Shift,Qualitative Stability,Observed Note,Caution
+case-001,TBD / supplied test artifact,TBD,TBD,TBD,FP32 / FP16 / INT8,TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,No result recorded yet.,Placeholder only; do not treat as evidence.

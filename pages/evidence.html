@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evidence | LiteRaceSegNet Personal Research Edition</title>
+  <meta name="description" content="LiteRaceSegNet Personal Research Edition v15.2 research portfolio and documentation portal." />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+
+<nav class="topnav" aria-label="Primary navigation">
+  <a class="brand" href="../index.html">LiteRaceSegNet PRE</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle menu">Menu</button>
+  <div class="nav-links">
+    <a href="../index.html">Overview</a>
+    <a href="start-here.html">Start here</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="evidence.html">Evidence</a>
+    <a href="../research_extension.html">Research extension</a>
+    <a href="output-stability.html">Output Stability</a>
+    <a href="hpls-eval.html">HPLS-Eval</a>
+    <a href="precision-mini-lab.html">Precision Mini-Lab</a>
+    <a href="repository.html">Repository</a>
+    <a href="license.html">Scope</a>
+    <a href="qa-guide.html">QA</a>
+  </div>
+  <div class="nav-actions">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+  </div>
+</nav>
+
+<main>
+
+<section class="page-hero">
+  <p class="breadcrumb"><a href="../index.html">Home</a> / Evidence</p>
+  <p class="eyebrow">Evidence status</p>
+  <h1>Protocol-first evidence table</h1>
+  <p class="lead">This page separates planned v15.2 protocol rows from measured results. Nothing is promoted to measured status without logs, masks, runtime metadata, case IDs, and environment notes.</p>
+</section>
+<section class="panel">
+  <h2>Evidence matrix</h2>
+  <table>
+    <tr><th>Area</th><th>Artifact</th><th>Status</th><th>Rule</th></tr>
+    <tr><td>Core segmentation</td><td>Architecture notes and selected source references</td><td>available</td><td>Descriptive, not a new benchmark claim.</td></tr>
+    <tr><td>Research extension</td><td><code>docs/research_extension_v15_2.md</code></td><td>available</td><td>Research program definition.</td></tr>
+    <tr><td>Output-stability metrics</td><td><code>docs/output_stability_metrics.md</code></td><td>available</td><td>Metric definitions, formulas, and recording fields.</td></tr>
+    <tr><td>Precision comparison</td><td>FP32 / FP16 / INT8 matrix</td><td>planned</td><td>Rows remain planned until masks and logs are attached.</td></tr>
+    <tr><td>Hardware shift</td><td>CPU / GPU / possible NPU / possible TPU matrix</td><td>future protocol</td><td>Device claims require actual execution logs.</td></tr>
+  </table>
+</section>
+<section class="grid-two">
+  <article class="panel"><h2>Historical reference rule</h2><p>Imported historical results must keep their original context and must not be relabeled as v15.2 measurements. Use them only as reference evidence with clear provenance.</p></article>
+  <article class="panel"><h2>Result status labels</h2><ul><li><code>planned</code>: protocol exists, no result yet.</li><li><code>measured_case</code>: case-level masks and logs are present.</li><li><code>measured_set</code>: multiple cases with aggregated summary.</li><li><code>future_protocol</code>: planned for hardware/runtime not yet tested.</li></ul></article>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <p><strong>Public package note:</strong> this portal contains documentation, selected source references, protocols, and result templates for review.</p>
+  <p>Raw datasets, credentials, checkpoints, and deployment artifacts remain outside this public release.</p>
+</footer>
+
+
+<script>
+(function () {
+  const root = document.documentElement;
+  const themeButtons = document.querySelectorAll('.theme-toggle');
+  const navToggles = document.querySelectorAll('.nav-toggle');
+  const storedTheme = localStorage.getItem('lrs-theme');
+
+  if (storedTheme === 'dark') root.classList.add('dark');
+
+  themeButtons.forEach(btn => btn.addEventListener('click', () => {
+    root.classList.toggle('dark');
+    localStorage.setItem('lrs-theme', root.classList.contains('dark') ? 'dark' : 'light');
+  }));
+
+  navToggles.forEach(btn => btn.addEventListener('click', () => {
+    const nav = btn.closest('.topnav');
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  }));
+})();
+</script>
+
+</body>
+</html>

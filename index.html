@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LiteRaceSegNet Personal Research Edition | v15.2</title>
+  <meta name="description" content="A compact public overview of the LiteRaceSegNet Personal Research Edition project structure, evidence material, and follow-up evaluation plan." />
+  <meta property="og:title" content="LiteRaceSegNet Personal Research Edition | v15.2" />
+  <meta property="og:description" content="GitHub Pages documentation portal for lightweight road-damage segmentation, evidence organization, and follow-up evaluation planning." />
+  <meta property="og:image" content="assets/literacesegnet_public_portal_main.png" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+<nav class="topnav" aria-label="Primary navigation">
+  <a class="brand" href="index.html">LiteRaceSegNet PRE</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle menu">Menu</button>
+  <div class="nav-links">
+    <a href="index.html">Overview</a>
+    <a href="pages/start-here.html">Start here</a>
+    <a href="pages/architecture.html">Architecture</a>
+    <a href="pages/evidence.html">Evidence</a>
+    <a href="research_extension.html">Research extension</a>
+    <a href="pages/output-stability.html">Output Stability</a>
+    <a href="pages/hpls-eval.html">HPLS-Eval</a>
+    <a href="pages/precision-mini-lab.html">Precision Mini-Lab</a>
+    <a href="pages/repository.html">Repository</a>
+    <a href="pages/license.html">Scope</a>
+    <a href="pages/qa-guide.html">QA</a>
+  </div>
+  <div class="nav-actions">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+  </div>
+</nav>
+
+<main>
+<section class="visual-hero-main" aria-labelledby="portal-title">
+  <figure class="visual-hero-frame">
+    <img src="assets/literacesegnet_public_portal_main.png" alt="LiteRaceSegNet Personal Research Edition public portal overview" width="1672" height="941" loading="eager" fetchpriority="high" />
+  </figure>
+  <div class="visual-hero-caption">
+    <div>
+      <p class="eyebrow">v15.2 Personal Research Edition</p>
+      <h1 id="portal-title">LiteRaceSegNet Personal Research Edition</h1>
+      <p class="lead">A compact public overview of the project structure, evidence material, and follow-up evaluation plan for lightweight road-damage segmentation.</p>
+      <p class="caption-note">This portal is meant to make the project easier to review, not to replace the full source tree.</p>
+    </div>
+    <div class="hero-actions visual-actions">
+      <a class="btn primary" href="pages/start-here.html">Start here</a>
+      <a class="btn secondary" href="research_extension.html">Research extension</a>
+      <a class="btn ghost" href="pages/output-stability.html">Output stability</a>
+    </div>
+  </div>
+</section>
+
+<section class="quick-facts" aria-label="Quick facts">
+  <article><span>Core</span><strong>Road-damage semantic segmentation</strong></article>
+  <article><span>Direction</span><strong>Lightweight CNN and boundary-aware design</strong></article>
+  <article><span>Evidence</span><strong>Architecture notes, protocols, and visual review material</strong></article>
+  <article><span>Extension</span><strong>HPLS-Eval and Precision Mini-Lab planning</strong></article>
+  <article><span>Format</span><strong>Static GitHub Pages documentation</strong></article>
+</section>
+
+<section class="cards" aria-label="Main cards">
+  <article class="card"><p class="card-index">01</p><h2>Start here</h2><p>A short reading route for reviewers who want the project scope, evidence structure, and repository layout first.</p><a href="pages/start-here.html">Open guide</a></article>
+  <article class="card"><p class="card-index">02</p><h2>Architecture</h2><p>Model structure, context/detail branches, boundary-guided fusion, and output interpretation notes.</p><a href="pages/architecture.html">Open architecture</a></article>
+  <article class="card"><p class="card-index">03</p><h2>Evidence</h2><p>Available result material, protocol status, visual evidence, and measured-versus-planned boundaries.</p><a href="pages/evidence.html">Open evidence</a></article>
+  <article class="card"><p class="card-index">04</p><h2>Research extension</h2><p>Follow-up evaluation direction around output stability, boundary behavior, and hardware-aware comparison.</p><a href="research_extension.html">Open extension</a></article>
+  <article class="card"><p class="card-index">05</p><h2>Output stability</h2><p>Mask area drift, boundary IoU drift, component delta, centroid shift, and precision comparison metadata.</p><a href="pages/output-stability.html">Open metrics</a></article>
+  <article class="card"><p class="card-index">06</p><h2>Repository scope</h2><p>Included files, excluded private material, and the public review boundary for this portfolio surface.</p><a href="pages/repository.html">Open repository map</a></article>
+</section>
+
+<section class="split">
+  <div>
+    <p class="eyebrow">Portfolio focus</p>
+    <h2>Readable evidence, restrained claims</h2>
+    <p>This site organizes the project in the order a reviewer is likely to read it: overview, architecture, evidence status, and the follow-up evaluation plan.</p>
+  </div>
+  <div class="panel">
+    <h3>Review route</h3>
+    <ul>
+      <li>Start with the reviewer guide for the shortest path.</li>
+      <li>Use the architecture page to understand the model direction.</li>
+      <li>Use the evidence page to separate available material from planned work.</li>
+      <li>Use the extension pages to read future evaluation directions without treating them as completed claims.</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <p><strong>Public package note:</strong> this portal contains documentation, selected source references, protocols, and result templates for review.</p>
+  <p>Raw datasets, credentials, checkpoints, and deployment artifacts remain outside this public release.</p>
+</footer>
+<script>
+(function () {
+  const root = document.documentElement;
+  const themeButtons = document.querySelectorAll('.theme-toggle');
+  const navToggles = document.querySelectorAll('.nav-toggle');
+  const storedTheme = localStorage.getItem('lrs-theme');
+
+  if (storedTheme === 'dark') root.classList.add('dark');
+
+  themeButtons.forEach(btn => btn.addEventListener('click', () => {
+    root.classList.toggle('dark');
+    localStorage.setItem('lrs-theme', root.classList.contains('dark') ? 'dark' : 'light');
+  }));
+
+  navToggles.forEach(btn => btn.addEventListener('click', () => {
+    const nav = btn.closest('.topnav');
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  }));
+})();
+</script>
+</body>
+</html>
